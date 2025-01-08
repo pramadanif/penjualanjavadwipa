@@ -60,7 +60,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="/adm">
+            <a class="navbar-brand d-flex align-items-center" href="/">
                 Admin
             </a>
 
@@ -127,7 +127,15 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2"></i>Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2"></i>Logout</a></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}" id="logout-form" style="display: none;">
+                                    @csrf
+                                </form>
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw me-2"></i>Logout
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
