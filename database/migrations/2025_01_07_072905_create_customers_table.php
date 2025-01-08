@@ -12,7 +12,7 @@ class CreateCustomersTable extends Migration
             $table->id('customer_id');
             $table->string('customer_name', 100);
             $table->string('customer_city', 100)->nullable();
-            $table->timestamps(); 
+            $table->timestamps();
         });
     }
 
@@ -21,3 +21,4 @@ class CreateCustomersTable extends Migration
         Schema::dropIfExists('customers');
     }
 }
+

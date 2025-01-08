@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 class SalesmanController extends Controller
 {
     public function index()
-    {
-        $salesmans = Salesman::latest()->paginate(10);
-        return view('salesmans.index', compact('salesmans'));
-    }
+{
+
+    $salesmans = Salesman::withCount('orders')
+        ->with('orders') 
+        ->latest('salesman_id')
+        ->get();
+
+    return view('salesmans.index', compact('salesmans'));
+}
 
     public function create()
     {

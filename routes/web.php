@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SalesmanController;
 use App\Http\Controllers\OrderController;
 
 
 Auth::routes();
 // route untuk Customer
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::prefix('customers')->name('customers.')->group(function () {
     Route::get('/', [CustomerController::class, 'index'])->name('index');
     Route::get('/create', [CustomerController::class, 'create'])->name('create');

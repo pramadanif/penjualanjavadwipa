@@ -12,6 +12,12 @@ class Customer extends Model
 
     protected $table = 'customers';
 
+    
+    public $incrementing = true;
+
+
+    protected $keyType = 'int';
+
 
     protected $primaryKey = 'customer_id';
 
@@ -21,7 +27,7 @@ class Customer extends Model
         'customer_city'
     ];
 
-    
+
     public function orders()
     {
         return $this->hasMany(Order::class, 'customer_id', 'customer_id');

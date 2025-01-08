@@ -1,0 +1,232 @@
+.banner{
+    height: 80vh;
+    background: linear-gradient(rgba(252, 252, 252, 0.758),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1726734376297-df2b3c7c7285?q=80&w=1777&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+  }
+  .banner-content{
+    height: 100%;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+  .fb{
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1553688738-a278b9f063e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+      background-size: cover;
+      background-position: center;
+  }
+  .fb-parallax{
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1553688738-a278b9f063e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  .fb-content{
+    height: 100%;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+  .parallax {
+  /* The image used */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.676),rgba(233, 233, 233, 0.5)), url("https://images.unsplash.com/photo-1726734376297-df2b3c7c7285?q=80&w=1777&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+  /* Set a specific height */
+  min-height: 98vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  .parallax-consultation{
+    /* The image used */
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1597214840472-aa1eaf0e1fac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80");
+
+    /* Set a specific height */
+    min-height: 80vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+  .darken-image{
+    filter: brightness(75%);
+  }
+  .txt-shadow{
+    text-shadow: 1px 1px 2px black;
+  }
+  .centering{
+    display: flex;
+    justify-content: center;
+  }
+  .righting{
+    display: flex;
+    justify-content: right;
+  }
+  .lefting{
+    display: flex;
+    justify-content: left;
+  }
+  .kotak-biru{
+    width: fit-content;
+    height: fit-content;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 10px;
+    background-color: #323D51;
+    display: flex;
+    justify-content: center;
+    -webkit-text-stroke: 0.8px white;
+  }
+  .kotak-sm-biru{
+    color: white;
+    width: fit-content;
+    height: 1.5vh;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: #323D51;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-text-stroke: 1.5px #2bd360;
+  }
+  .bg-nav{
+    background-color: #323D51;
+  }
+  .bg-contact{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1616492355586-6634b6d22c42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1157&q=80");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .black-txt-shadow{
+    text-shadow: 0 0 1em black, 0 0 0.2em black;
+  }
+
+ /* Container for the marquee */
+/* Container for the marquee */
+.marquee {
+    width: 100vw;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 0;
+    position: relative;
+    margin-top: 10px; /* Tambahkan jarak untuk memastikan marquee tidak bertabrakan */
+     /* Pastikan marquee berada di bawah karakter */
+}
+
+/* Style for pixelated text */
+.marquee-text {
+    display: inline-block;
+    font-family: 'Press Start 2P', sans-serif; /* Google Fonts or custom pixel font */
+    font-size: 20px;
+    color: #f4a700;
+    text-shadow: 0 0 5px #f4a700;
+    animation: marquee 15s linear infinite;
+    image-rendering: pixelated; /* Enhance pixelation effect */
+}
+
+/* Infinite marquee animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(100vw); /* Start from the right side */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left side */
+    }
+}
+
+/* Pixel character */
+#pixel-character {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://i.pinimg.com/originals/85/93/91/85939126aeb7eb1165dbd17b7a968433.gif'); /* Ganti dengan sprite gambar karakter orang */
+    background-size: cover;
+    position: absolute;
+    bottom: 20px; /* Pastikan karakter tidak terlalu rendah */
+    left: 0;
+    animation: walkleft 20s linear infinite, sprite-animation 1s steps(4) infinite;
+    image-rendering: pixelated; /* Agar tampak seperti pixel */
+    z-index: 1; /* Pastikan karakter berada di atas marquee */
+    margin-top: 50px;
+}
+#pixel-character2 {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5b0c2660297114545512fd73/1527541417594-LC91I0KCFBDPVU5F6H58/babu+walk+left.gif?format=original'); /* Ganti dengan sprite gambar karakter orang */
+    background-size: cover;
+    position: absolute;
+    bottom: 20px; /* Pastikan karakter tidak terlalu rendah */
+    left: 0;
+    animation: marquee 15s linear infinite, sprite-animation 1s steps(4) infinite;
+    image-rendering: pixelated; /* Agar tampak seperti pixel */
+    z-index: 1; /* Pastikan karakter berada di atas marquee */
+    margin-top: 50px;
+}
+#pixel-character3 {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://art.pixilart.com/26455f6ebac1226.gif'); /* Ganti dengan sprite gambar karakter orang */
+    background-size: cover;
+    position: absolute;
+    bottom: 20px; /* Pastikan karakter tidak terlalu rendah */
+    left: 0;
+    animation: walkleft 15s linear infinite, sprite-animation 1s steps(4) infinite;
+    image-rendering: pixelated; /* Agar tampak seperti pixel */
+    z-index: 1; /* Pastikan karakter berada di atas marquee */
+    margin-top: 50px;
+}
+#pixel-art-static {
+    position: absolute;
+    top: 0; /* Mengatur posisi di bagian atas */
+    left: 0; /* Mengatur posisi di bagian kiri */
+    width: 100%; /* Mengisi lebar layar */
+    height: auto; /* Tinggi otomatis */
+    background-image: url('https://art.pixilart.com/2d19805411b9590.gif'); /* Gambar pixel art diam */
+    background-size: cover; /* Menjaga agar gambar memenuhi elemen */
+    background-repeat: no-repeat; /* Jangan ulang gambar */
+    image-rendering: pixelated; /* Agar terlihat lebih pixelated */
+    z-index: 1; /* Pastikan gambar diam berada di bawah elemen lainnya */
+}
+/* Animation to move pixel character */
+@keyframes walkleft {
+    0% {
+        transform: translateX(0); /* Start from the left side of the screen */
+    }
+    100% {
+        transform: translateX(calc(100vw - 40px)); /* Move to the right side of the screen */
+    }
+}
+
+/* Sprite animation (assuming 4 frames of walking animation) */
+@keyframes sprite-animation {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -160px; /* Adjust based on sprite width (40px * 4 frames = 160px) */
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0); /* Bottom-left corner */
+    }
+    100% {
+        transform: translate(calc(100vw - 40px), calc(-100vh + 80px)); /* Move to top-right corner, with space */
+    }
+}

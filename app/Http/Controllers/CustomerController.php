@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 class CustomerController extends Controller
 {
     public function index()
-    {
-        $customers = Customer::latest()->paginate(10);
-        return view('customers.index', compact('customers'));
-    }
+{
+    
+    $customers = Customer::withCount('orders')
+        ->with('orders') // untuk menghitung total pembelian
+        ->latest('customer_id')
+        ->get();
+
+    return view('customers.index', compact('customers'));
+}
 
     public function create()
     {
