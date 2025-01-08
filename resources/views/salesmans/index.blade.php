@@ -26,8 +26,43 @@
         </div>
     @endif
 
-    <!-- Tombol Tambah Salesman Baru -->
-    <a href="{{ route('salesmans.create') }}" class="btn btn-primary mb-3">Tambah Salesman Baru</a>
+        <!-- Tombol Tambah Salesman -->
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahSalesmanModal">
+        Tambah Salesman Baru
+    </button>
+
+    <!-- Modal Tambah Salesman -->
+    <div class="modal fade" id="tambahSalesmanModal" tabindex="-1" aria-labelledby="tambahSalesmanModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tambahSalesmanModalLabel">Tambah Salesman Baru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ route('salesmans.store') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="salesman_name" class="form-label">Nama Salesman</label>
+                            <input type="text" class="form-control" id="salesman_name" name="salesman_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="salesman_city" class="form-label">Kota</label>
+                            <input type="text" class="form-control" id="salesman_city" name="salesman_city">
+                        </div>
+                        <div class="mb-3">
+                            <label for="commission" class="form-label">Komisi</label>
+                            <input type="number" class="form-control" id="commission" name="commission" step="0.01" min="0" max="1" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Tabel Daftar Salesman -->

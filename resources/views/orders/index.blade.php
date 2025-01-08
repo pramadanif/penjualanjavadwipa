@@ -26,8 +26,75 @@
         </div>
     @endif
 
-    <!-- Tombol Tambah Order Baru -->
-    <a href="{{ route('orders.create') }}" class="btn btn-primary mb-3">Tambah Order Baru</a>
+        <!-- Tombol Tambah Order -->
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahOrderModal">
+        Tambah Order Baru
+    </button>
+
+    <!-- Modal Tambah Order -->
+    <div class="modal fade" id="tambahOrderModal" tabindex="-1" aria-labelledby="tambahOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tambahOrderModalLabel">Tambah Order Baru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ route('orders.store') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="order_date" class="form-label">Tanggal Order</label>
+                                <input type="date" class="form-control" id="order_date" name="order_date"
+                                    value="{{ old('order_date', date('Y-m-d')) }}" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="amount" class="form-label">Jumlah Order</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span>
+                                    <input type="number" class="form-control" id="amount" name="amount"
+                                        value="{{ old('amount') }}" min="0" step="0.01" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="customer_id" class="form-label">Pilih Customer</label>
+                                <select class="form-control" id="customer_id" name="customer_id" required>
+                                    <option value="">Pilih Customer</option>
+                                    @foreach($customers as $customer)
+                                        <option value="{{ $customer->customer_id }}"
+                                            {{ old('customer_id') == $customer->customer_id ? 'selected' : '' }}>
+                                            {{ $customer->customer_name }} ({{ $customer->customer_city ?? 'Tidak ada kota' }})
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="salesman_id" class="form-label">Pilih Salesman</label>
+                                <select class="form-control" id="salesman_id" name="salesman_id" required>
+                                    <option value="">Pilih Salesman</option>
+                                    @foreach($salesmans as $salesman)
+                                        <option value="{{ $salesman->salesman_id }}"
+                                            {{ old('salesman_id') == $salesman->salesman_id ? 'selected' : '' }}>
+                                            {{ $salesman->salesman_name }} ({{ $salesman->salesman_city ?? 'Tidak ada kota' }})
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Simpan Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Tabel Daftar Order -->

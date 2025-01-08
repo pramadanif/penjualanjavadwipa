@@ -12,27 +12,32 @@ class OrderController extends Controller
 {
     public function index(Request $request)
 {
-    // Query untuk pelanggan dengan setidaknya dua salesmen
+
     $customersWithMultipleSalesmen = DB::table('orders')
         ->select('customer_id', DB::raw('COUNT(DISTINCT salesman_id) as salesman_count'))
         ->groupBy('customer_id')
         ->having('salesman_count', '>=', 2)
         ->get();
 
-    // Query untuk salesmen dengan komisi tertinggi
+
     $topSalesmen = Salesman::orderBy('commission', 'desc')
         ->take(5) // Ambil 5 teratas
         ->get();
 
-    // Query order utama
+    
     $orders = Order::with(['customer', 'salesman'])
         ->orderBy('order_id', 'desc')
         ->get();
 
+    $customers = Customer::all();
+    $salesmans = Salesman::all();
+
     return view('orders.index', compact(
         'orders',
         'customersWithMultipleSalesmen',
-        'topSalesmen'
+        'topSalesmen',
+        'customers',
+        'salesmans'
     ));
 }
 
